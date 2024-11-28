@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="hear.png" /> VENIA
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">artworks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">contact</a>
+                </li>
+                <li class = "nav-item">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                        login
+                    </button>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+
+        <!-- Login -->
+        <div id="id01" class="modal mt-5">
+
+          <form class="modal-content animate" action="home.html" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <h1 class = "navbar-brand">Welcome to VENIA</h1>
+            </div>
+
+            <div class="container">
+
+              <label for="uname" class = "navbar-brand colorsize"><b>Username</b></label>
+              <input type="text" id = "user" placeholder="vena" name="uname" class = "display" required>
+
+              <label for="psw" class = "navbar-brand colorsize"><b>Password</b></label>
+              <input type="password" id = "pass" placeholder="jezna" name="psw" class = "display mb-5" required>
+
+              <button onclick="loginButton(event)" type="submit mt-5">Login</button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Carorusel -->
+          <div class = "position-absolute bottom-0 start-50 translate-middle-x mt-5">
+            <img src = "" alt = "Olivia Rodrigo">
+          </div>
+
+        <!-- Function -->
+        <script>
+            function loginButton(event) {
+                event.preventDefault();
+
+                var userName = "vena";
+                var passWord = "jezna";
+
+                var enteredUser = document.getElementById("user").value;
+                var enteredPass = document.getElementById("pass").value;
+
+                if (enteredUser == userName && enteredPass == passWord) {
+                    alert ("Login successful!");
+                    window.location.href = "home.html";
+                } else {
+                    alert ("Incorrect username or password!");
+                }
+            }
+        </script>
+
+
+
+</body>
+</html>
+
